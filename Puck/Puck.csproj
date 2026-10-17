@@ -1,0 +1,624 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{ADB57333-CF0E-461F-810A-B5E475943802}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Puck</RootNamespace>
+    <AssemblyName>Puck</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="AYellowpaper.SerializedCollections">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\AYellowpaper.SerializedCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="com.rlabrecque.steamworks.net">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\com.rlabrecque.steamworks.net.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Humanizer">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Humanizer.dll</HintPath>
+    </Reference>
+    <Reference Include="Linework">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Linework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\netstandard.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOClient">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\SocketIOClient.dll</HintPath>
+    </Reference>
+    <Reference Include="SocketIOClient.Common">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\SocketIOClient.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="SuperSimpleTcp">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\SuperSimpleTcp.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Netcode.Runtime">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.Netcode.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Networking.Transport">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.Networking.Transport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Universal.Runtime">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Splines">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.Splines.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="uPnP">
+      <HintPath>..\..\..\Program Files (x86)\Steam\steamapps\common\Puck\Puck_Data\Managed\uPnP.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminManager.cs" />
+    <Compile Include="AdminManagerController.cs" />
+    <Compile Include="AppearanceCategory.cs" />
+    <Compile Include="AppearanceItem.cs" />
+    <Compile Include="AppearanceSubcategory.cs" />
+    <Compile Include="ApplicationDiagnostics.cs" />
+    <Compile Include="ApplicationManager.cs" />
+    <Compile Include="ApplicationManagerController.cs" />
+    <Compile Include="ApplicationQuality.cs" />
+    <Compile Include="AudioManager.cs" />
+    <Compile Include="AudioManagerController.cs" />
+    <Compile Include="AuthenticationPhase.cs" />
+    <Compile Include="AvatarSize.cs" />
+    <Compile Include="BackendManager.cs" />
+    <Compile Include="BackendManagerController.cs" />
+    <Compile Include="BackendUtils.cs" />
+    <Compile Include="BanManager.cs" />
+    <Compile Include="BanManagerController.cs" />
+    <Compile Include="BaseCamera.cs" />
+    <Compile Include="BaseCameraController.cs" />
+    <Compile Include="BaseErrorResponseData.cs" />
+    <Compile Include="BaseGameMode.cs" />
+    <Compile Include="BaseGameModeConfig.cs" />
+    <Compile Include="BasePlugin.cs" />
+    <Compile Include="BasePluginState.cs" />
+    <Compile Include="BasePopupContent.cs" />
+    <Compile Include="Beard.cs" />
+    <Compile Include="BeforeChildRemovedEvent.cs" />
+    <Compile Include="BotBrain.cs" />
+    <Compile Include="BotContext.cs" />
+    <Compile Include="BotInputDriver.cs" />
+    <Compile Include="BotManager.cs" />
+    <Compile Include="CameraManager.cs" />
+    <Compile Include="CameraManagerController.cs" />
+    <Compile Include="CameraType.cs" />
+    <Compile Include="ChaseBotBrain.cs" />
+    <Compile Include="ChatCommandInfo.cs" />
+    <Compile Include="ChatManager.cs" />
+    <Compile Include="ChatManagerController.cs" />
+    <Compile Include="ChatMessage.cs" />
+    <Compile Include="ChildAddedEvent.cs" />
+    <Compile Include="ChildRemovedEvent.cs" />
+    <Compile Include="CollisionRecorder.cs" />
+    <Compile Include="CompetitiveGameMode.cs" />
+    <Compile Include="CompetitiveGameModeConfig.cs" />
+    <Compile Include="CompressedNetworkVariable.cs" />
+    <Compile Include="ConfigUtils.cs" />
+    <Compile Include="Connection.cs" />
+    <Compile Include="ConnectionApproval.cs" />
+    <Compile Include="ConnectionApprovalManager.cs" />
+    <Compile Include="ConnectionApprovalManagerController.cs" />
+    <Compile Include="ConnectionData.cs" />
+    <Compile Include="ConnectionManager.cs" />
+    <Compile Include="ConnectionManagerController.cs" />
+    <Compile Include="ConnectionPhase.cs" />
+    <Compile Include="ConnectionRejection.cs" />
+    <Compile Include="ConnectionRejectionCode.cs" />
+    <Compile Include="ConnectionRejectionData.cs" />
+    <Compile Include="ConnectionState.cs" />
+    <Compile Include="Constants.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="CountryUtils.cs" />
+    <Compile Include="CreaseGhostView.cs" />
+    <Compile Include="CreaseGhostViewController.cs" />
+    <Compile Include="CreaseProtection.cs" />
+    <Compile Include="CrowdManager.cs" />
+    <Compile Include="CrowdManagerController.cs" />
+    <Compile Include="CrowdMember.cs" />
+    <Compile Include="CrowdMemberController.cs" />
+    <Compile Include="CrowdPosition.cs" />
+    <Compile Include="CrowdPositionController.cs" />
+    <Compile Include="DebugMode.cs" />
+    <Compile Include="DeploymentManager.cs" />
+    <Compile Include="DeploymentManagerController.cs" />
+    <Compile Include="DeploymentProvider.cs" />
+    <Compile Include="DerivativeMeasurement.cs" />
+    <Compile Include="DestroyBotBrain.cs" />
+    <Compile Include="Disconnection.cs" />
+    <Compile Include="DisconnectionCode.cs" />
+    <Compile Include="DoublePressInteraction.cs" />
+    <Compile Include="EmptyResponse.cs" />
+    <Compile Include="EndPoint.cs" />
+    <Compile Include="EventDependencyTrigger.cs" />
+    <Compile Include="EventManager.cs" />
+    <Compile Include="ExponentialMovingAverage.cs" />
+    <Compile Include="Flag.cs" />
+    <Compile Include="GameManager.cs" />
+    <Compile Include="GameManagerController.cs" />
+    <Compile Include="GameModeClientConfig.cs" />
+    <Compile Include="GameModeManager.cs" />
+    <Compile Include="GameModeManagerController.cs" />
+    <Compile Include="GamePhase.cs" />
+    <Compile Include="GameResult.cs" />
+    <Compile Include="GameState.cs" />
+    <Compile Include="GlobalStateManager.cs" />
+    <Compile Include="GlobalStateManagerController.cs" />
+    <Compile Include="Goal.cs" />
+    <Compile Include="GoalController.cs" />
+    <Compile Include="GoalNetCollider.cs" />
+    <Compile Include="GoalTrigger.cs" />
+    <Compile Include="Headgear.cs" />
+    <Compile Include="HeadgearRole.cs" />
+    <Compile Include="HierarchyChangedEvent.cs" />
+    <Compile Include="HierarchyChangeType.cs" />
+    <Compile Include="Hover.cs" />
+    <Compile Include="IGameMode.cs" />
+    <Compile Include="InMessage.cs" />
+    <Compile Include="InputManager.cs" />
+    <Compile Include="InputManagerController.cs" />
+    <Compile Include="IPuckPlugin.cs" />
+    <Compile Include="Item.cs" />
+    <Compile Include="ItemManager.cs" />
+    <Compile Include="ItemManagerController.cs" />
+    <Compile Include="Jersey.cs" />
+    <Compile Include="JerseyTeam.cs" />
+    <Compile Include="KeepUpright.cs" />
+    <Compile Include="KeyBind.cs" />
+    <Compile Include="KeyBindInteraction.cs" />
+    <Compile Include="KeyBindInteractionType.cs" />
+    <Compile Include="Level.cs" />
+    <Compile Include="LevelController.cs" />
+    <Compile Include="LifecycleManager.cs" />
+    <Compile Include="LockerRoom.cs" />
+    <Compile Include="LockerRoomCamera.cs" />
+    <Compile Include="LockerRoomCameraController.cs" />
+    <Compile Include="LockerRoomController.cs" />
+    <Compile Include="LockerRoomPlayer.cs" />
+    <Compile Include="LockerRoomPlayerController.cs" />
+    <Compile Include="LockerRoomStick.cs" />
+    <Compile Include="LockerRoomStickController.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="MatchAbandonment.cs" />
+    <Compile Include="MatchAbandonmentPhase.cs" />
+    <Compile Include="MatchableGameMode.cs" />
+    <Compile Include="MatchData.cs" />
+    <Compile Include="MatchmakingManagerStatistics.cs" />
+    <Compile Include="MatchPlayer.cs" />
+    <Compile Include="MeshGhoster.cs" />
+    <Compile Include="MeshRendererHider.cs" />
+    <Compile Include="MeshRendererTexturer.cs" />
+    <Compile Include="Microsoft\CodeAnalysis\EmbeddedAttribute.cs" />
+    <Compile Include="MicTester.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="ModConfig.cs" />
+    <Compile Include="ModManager.cs" />
+    <Compile Include="ModManagerController.cs" />
+    <Compile Include="MonoBehaviourSingleton.cs" />
+    <Compile Include="MoveAlongSpline.cs" />
+    <Compile Include="Movement.cs" />
+    <Compile Include="Mustache.cs" />
+    <Compile Include="NetworkBehaviourSingleton.cs" />
+    <Compile Include="NetworkBuffering.cs" />
+    <Compile Include="NetworkDiagnostics.cs" />
+    <Compile Include="NetworkedInput.cs" />
+    <Compile Include="NetworkingUtils.cs" />
+    <Compile Include="NetworkObjectCollision.cs" />
+    <Compile Include="NetworkObjectCollisionRecorder.cs" />
+    <Compile Include="NetworkStatistics.cs" />
+    <Compile Include="ObservableList.cs" />
+    <Compile Include="OutMessage.cs" />
+    <Compile Include="Overlay.cs" />
+    <Compile Include="PatchManager.cs" />
+    <Compile Include="PhysicsManager.cs" />
+    <Compile Include="PhysicsManagerController.cs" />
+    <Compile Include="PIDController.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="PlayerAnnouncementMessage.cs" />
+    <Compile Include="PlayerAuthenticateResponse.cs" />
+    <Compile Include="PlayerBan.cs" />
+    <Compile Include="PlayerBody.cs" />
+    <Compile Include="PlayerBodyController.cs" />
+    <Compile Include="PlayerCamera.cs" />
+    <Compile Include="PlayerCameraController.cs" />
+    <Compile Include="PlayerController.cs" />
+    <Compile Include="PlayerCooldown.cs" />
+    <Compile Include="PlayerCreatePartyResponse.cs" />
+    <Compile Include="PlayerCustomizationState.cs" />
+    <Compile Include="PlayerData.cs" />
+    <Compile Include="PlayerDataMessage.cs" />
+    <Compile Include="PlayerDeployServerResponse.cs" />
+    <Compile Include="PlayerDeployServerSuccessResponseData.cs" />
+    <Compile Include="PlayerDisbandPartyResponse.cs" />
+    <Compile Include="PlayerFinalizeTransactionResponse.cs" />
+    <Compile Include="PlayerGameState.cs" />
+    <Compile Include="PlayerGetProbesResponse.cs" />
+    <Compile Include="PlayerGetProbesSuccessResponseData.cs" />
+    <Compile Include="PlayerGroin.cs" />
+    <Compile Include="PlayerGroupData.cs" />
+    <Compile Include="PlayerGroupDataMessage.cs" />
+    <Compile Include="PlayerHandedness.cs" />
+    <Compile Include="PlayerHead.cs" />
+    <Compile Include="PlayerInput.cs" />
+    <Compile Include="PlayerInputController.cs" />
+    <Compile Include="PlayerItem.cs" />
+    <Compile Include="PlayerJoinPartyResponse.cs" />
+    <Compile Include="PlayerKeyMessage.cs" />
+    <Compile Include="PlayerKickPartyMemberResponse.cs" />
+    <Compile Include="PlayerLeavePartyResponse.cs" />
+    <Compile Include="PlayerLegPad.cs" />
+    <Compile Include="PlayerLegPadState.cs" />
+    <Compile Include="PlayerManager.cs" />
+    <Compile Include="PlayerManagerController.cs" />
+    <Compile Include="PlayerManagerStatistics.cs" />
+    <Compile Include="PlayerMatchData.cs" />
+    <Compile Include="PlayerMatchDataMessage.cs" />
+    <Compile Include="PlayerMesh.cs" />
+    <Compile Include="PlayerMute.cs" />
+    <Compile Include="PlayerPartyData.cs" />
+    <Compile Include="PlayerPartyDataMessage.cs" />
+    <Compile Include="PlayerPhase.cs" />
+    <Compile Include="PlayerPosition.cs" />
+    <Compile Include="PlayerPositionController.cs" />
+    <Compile Include="PlayerProbeRttRequestMessage.cs" />
+    <Compile Include="PlayerResult.cs" />
+    <Compile Include="PlayerRole.cs" />
+    <Compile Include="PlayerSetIdentityResponse.cs" />
+    <Compile Include="PlayerStartMatchmakingResponse.cs" />
+    <Compile Include="PlayerStartTransactionResponse.cs" />
+    <Compile Include="PlayerStartTransactionSuccessResponseData.cs" />
+    <Compile Include="PlayerState.cs" />
+    <Compile Include="PlayerStatistics.cs" />
+    <Compile Include="PlayerStatisticsMessage.cs" />
+    <Compile Include="PlayerTeam.cs" />
+    <Compile Include="PlayerTorso.cs" />
+    <Compile Include="PlayerUpdatePartyResponse.cs" />
+    <Compile Include="PlayerVoiceRecorder.cs" />
+    <Compile Include="PlayerVoiceRecorderController.cs" />
+    <Compile Include="Plugin.cs" />
+    <Compile Include="PoolStatistics.cs" />
+    <Compile Include="Popup.cs" />
+    <Compile Include="PopupMissingModsPopupContent.cs" />
+    <Compile Include="PopupMissingPasswordContent.cs" />
+    <Compile Include="PopupNotificationContent.cs" />
+    <Compile Include="PostProcessing.cs" />
+    <Compile Include="PostProcessingController.cs" />
+    <Compile Include="Probe.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PublicGameMode.cs" />
+    <Compile Include="PublicGameModeConfig.cs" />
+    <Compile Include="Puck.cs" />
+    <Compile Include="PuckCollisionDetectionModeSwitcher.cs" />
+    <Compile Include="PuckController.cs" />
+    <Compile Include="PuckElevationIndicator.cs" />
+    <Compile Include="PuckElevationIndicatorController.cs" />
+    <Compile Include="PuckManager.cs" />
+    <Compile Include="PuckManagerController.cs" />
+    <Compile Include="PuckPosition.cs" />
+    <Compile Include="PuckPositionController.cs" />
+    <Compile Include="QuickChat.cs" />
+    <Compile Include="QuickChatCategory.cs" />
+    <Compile Include="ReconnectionPhase.cs" />
+    <Compile Include="ReconnectionState.cs" />
+    <Compile Include="RenderingToggledEvent.cs" />
+    <Compile Include="ReplayBindings.cs" />
+    <Compile Include="ReplayCamera.cs" />
+    <Compile Include="ReplayCameraController.cs" />
+    <Compile Include="ReplayCellyCam.cs" />
+    <Compile Include="ReplayDiscreteEvent.cs" />
+    <Compile Include="ReplayManager.cs" />
+    <Compile Include="ReplayManagerController.cs" />
+    <Compile Include="ReplayPlayer.cs" />
+    <Compile Include="ReplayPlayerBodyBinding.cs" />
+    <Compile Include="ReplayPlayerBodyDespawned.cs" />
+    <Compile Include="ReplayPlayerBodySpawned.cs" />
+    <Compile Include="ReplayPlayerBodyStateSample.cs" />
+    <Compile Include="ReplayPlayerDespawned.cs" />
+    <Compile Include="ReplayPlayerInputSample.cs" />
+    <Compile Include="ReplayPlayerSpawned.cs" />
+    <Compile Include="ReplayPoseBinding.cs" />
+    <Compile Include="ReplayPoseSample.cs" />
+    <Compile Include="ReplayPuckDespawned.cs" />
+    <Compile Include="ReplayPuckSpawned.cs" />
+    <Compile Include="ReplayRecorder.cs" />
+    <Compile Include="ReplayRecorderController.cs" />
+    <Compile Include="ReplayRecording.cs" />
+    <Compile Include="ReplaySlowMotion.cs" />
+    <Compile Include="ReplayStickDespawned.cs" />
+    <Compile Include="ReplayStickSpawned.cs" />
+    <Compile Include="ReplayTouchTracker.cs" />
+    <Compile Include="ReplayTrack.cs" />
+    <Compile Include="Response.cs" />
+    <Compile Include="RookieBotBrain.cs" />
+    <Compile Include="SaveManager.cs" />
+    <Compile Include="SceneManager.cs" />
+    <Compile Include="SceneManagerController.cs" />
+    <Compile Include="Scoreboard.cs" />
+    <Compile Include="ScoreboardController.cs" />
+    <Compile Include="Server.cs" />
+    <Compile Include="ServerAuthenticateResponse.cs" />
+    <Compile Include="ServerBrowserEndPointsResponse.cs" />
+    <Compile Include="ServerBrowserEndPointsSuccessResponseData.cs" />
+    <Compile Include="ServerConfig.cs" />
+    <Compile Include="ServerConnectionApprovalResponse.cs" />
+    <Compile Include="ServerConnectionApprovalSuccessResponseData.cs" />
+    <Compile Include="ServerData.cs" />
+    <Compile Include="ServerDataMessage.cs" />
+    <Compile Include="ServerKickPlayerMessage.cs" />
+    <Compile Include="ServerManager.cs" />
+    <Compile Include="ServerManagerController.cs" />
+    <Compile Include="ServerManagerStatistics.cs" />
+    <Compile Include="ServerMatchData.cs" />
+    <Compile Include="ServerMatchDataMessage.cs" />
+    <Compile Include="ServerPreviewData.cs" />
+    <Compile Include="ServerReadinessManager.cs" />
+    <Compile Include="ServerReadinessManagerController.cs" />
+    <Compile Include="ServerReadinessPhase.cs" />
+    <Compile Include="ServerSortDirection.cs" />
+    <Compile Include="ServerSortType.cs" />
+    <Compile Include="ServerState.cs" />
+    <Compile Include="SettingsManager.cs" />
+    <Compile Include="SettingsManagerController.cs" />
+    <Compile Include="ShadowQuality.cs" />
+    <Compile Include="Skate.cs" />
+    <Compile Include="SmoothPositioner.cs" />
+    <Compile Include="SoftCollider.cs" />
+    <Compile Include="SpectatorCamera.cs" />
+    <Compile Include="SpectatorCameraController.cs" />
+    <Compile Include="StandardGameMode.cs" />
+    <Compile Include="StandardGameModeConfig.cs" />
+    <Compile Include="SteamIntegrationManager.cs" />
+    <Compile Include="SteamIntegrationManagerController.cs" />
+    <Compile Include="SteamManager.cs" />
+    <Compile Include="SteamManagerController.cs" />
+    <Compile Include="SteamWorkshopItem.cs" />
+    <Compile Include="SteamWorkshopItemDetails.cs" />
+    <Compile Include="SteamWorkshopItemDetailsState.cs" />
+    <Compile Include="SteamWorkshopItemPhase.cs" />
+    <Compile Include="SteamWorkshopItemState.cs" />
+    <Compile Include="SteamWorkshopManager.cs" />
+    <Compile Include="SteamWorkshopManagerController.cs" />
+    <Compile Include="Stick.cs" />
+    <Compile Include="StickController.cs" />
+    <Compile Include="StickMesh.cs" />
+    <Compile Include="StickPositioner.cs" />
+    <Compile Include="StickPositionerController.cs" />
+    <Compile Include="StickSkin.cs" />
+    <Compile Include="StickSkinTeam.cs" />
+    <Compile Include="StickTape.cs" />
+    <Compile Include="StringUtils.cs" />
+    <Compile Include="SynchronizedAudio.cs" />
+    <Compile Include="SynchronizedAudioController.cs" />
+    <Compile Include="SynchronizedObject.cs" />
+    <Compile Include="SynchronizedObjectBandSettings.cs" />
+    <Compile Include="SynchronizedObjectClientDiagnostics.cs" />
+    <Compile Include="SynchronizedObjectClientDiagnosticsData.cs" />
+    <Compile Include="SynchronizedObjectClientReceiver.cs" />
+    <Compile Include="SynchronizedObjectController.cs" />
+    <Compile Include="SynchronizedObjectData.cs" />
+    <Compile Include="SynchronizedObjectDriveCadence.cs" />
+    <Compile Include="SynchronizedObjectInterpolator.cs" />
+    <Compile Include="SynchronizedObjectLodCounts.cs" />
+    <Compile Include="SynchronizedObjectLodSelection.cs" />
+    <Compile Include="SynchronizedObjectLodSelector.cs" />
+    <Compile Include="SynchronizedObjectLodSource.cs" />
+    <Compile Include="SynchronizedObjectManager.cs" />
+    <Compile Include="SynchronizedObjectManagerController.cs" />
+    <Compile Include="SynchronizedObjectNetworkSmoothingSettings.cs" />
+    <Compile Include="SynchronizedObjectPlayback.cs" />
+    <Compile Include="SynchronizedObjectPlayerDiagnosticsData.cs" />
+    <Compile Include="SynchronizedObjectPose.cs" />
+    <Compile Include="SynchronizedObjectReceivedState.cs" />
+    <Compile Include="SynchronizedObjectRegistry.cs" />
+    <Compile Include="SynchronizedObjectSample.cs" />
+    <Compile Include="SynchronizedObjectSampleRing.cs" />
+    <Compile Include="SynchronizedObjectSendBuffers.cs" />
+    <Compile Include="SynchronizedObjectSendPlanner.cs" />
+    <Compile Include="SynchronizedObjectSendState.cs" />
+    <Compile Include="SynchronizedObjectServerDiagnostics.cs" />
+    <Compile Include="SynchronizedObjectServerDiagnosticsData.cs" />
+    <Compile Include="SynchronizedObjectSmoothing.cs" />
+    <Compile Include="SynchronizedObjectSnapshot.cs" />
+    <Compile Include="SynchronizedObjectTickHeader.cs" />
+    <Compile Include="SynchronizedObjectTimeline.cs" />
+    <Compile Include="SynchronizedPlayerState.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableAttribute.cs" />
+    <Compile Include="System\Runtime\CompilerServices\NullableContextAttribute.cs" />
+    <Compile Include="TCPClient.cs" />
+    <Compile Include="TCPServer.cs" />
+    <Compile Include="TCPServerMessage.cs" />
+    <Compile Include="TCPServerMessageType.cs" />
+    <Compile Include="TCPServerPreviewRequest.cs" />
+    <Compile Include="TCPServerPreviewResponse.cs" />
+    <Compile Include="TerminalUtils.cs" />
+    <Compile Include="ThreadManager.cs" />
+    <Compile Include="TimeHistogram.cs" />
+    <Compile Include="TimeoutManager.cs" />
+    <Compile Include="TimeoutManagerController.cs" />
+    <Compile Include="Toast.cs" />
+    <Compile Include="ToggleInteraction.cs" />
+    <Compile Include="TransactionPhase.cs" />
+    <Compile Include="TransactionState.cs" />
+    <Compile Include="TweenUtils.cs" />
+    <Compile Include="UIAnnouncements.cs" />
+    <Compile Include="UIAnnouncementsController.cs" />
+    <Compile Include="UIAppearance.cs" />
+    <Compile Include="UIAppearanceController.cs" />
+    <Compile Include="UIChat.cs" />
+    <Compile Include="UIChatController.cs" />
+    <Compile Include="UIChatMessage.cs" />
+    <Compile Include="UIDebug.cs" />
+    <Compile Include="UIDebugController.cs" />
+    <Compile Include="UIDirectConnect.cs" />
+    <Compile Include="UIFooter.cs" />
+    <Compile Include="UIFooterController.cs" />
+    <Compile Include="UIFriends.cs" />
+    <Compile Include="UIFriendsController.cs" />
+    <Compile Include="UIGameState.cs" />
+    <Compile Include="UIGameStateController.cs" />
+    <Compile Include="UIHUD.cs" />
+    <Compile Include="UIHUDController.cs" />
+    <Compile Include="UIIdentity.cs" />
+    <Compile Include="UIIdentityController.cs" />
+    <Compile Include="UIMainMenu.cs" />
+    <Compile Include="UIMainMenuController.cs" />
+    <Compile Include="UIManager.cs" />
+    <Compile Include="UIManagerController.cs" />
+    <Compile Include="UIMatchmaking.cs" />
+    <Compile Include="UIMatchmakingController.cs" />
+    <Compile Include="UIMinimap.cs" />
+    <Compile Include="UIMinimapController.cs" />
+    <Compile Include="UIMods.cs" />
+    <Compile Include="UIModsController.cs" />
+    <Compile Include="UINewServer.cs" />
+    <Compile Include="UINewServerController.cs" />
+    <Compile Include="UIOverlayManager.cs" />
+    <Compile Include="UIOverlayManagerController.cs" />
+    <Compile Include="UIPauseMenu.cs" />
+    <Compile Include="UIPauseMenuController.cs" />
+    <Compile Include="UIPhase.cs" />
+    <Compile Include="UIPlay.cs" />
+    <Compile Include="UIPlayController.cs" />
+    <Compile Include="UIPlayerMenu.cs" />
+    <Compile Include="UIPlayerMenuController.cs" />
+    <Compile Include="UIPopupManager.cs" />
+    <Compile Include="UIPopupManagerController.cs" />
+    <Compile Include="UIPositionSelect.cs" />
+    <Compile Include="UIPositionSelectController.cs" />
+    <Compile Include="UIScoreboard.cs" />
+    <Compile Include="UIScoreboardController.cs" />
+    <Compile Include="UIServerBrowser.cs" />
+    <Compile Include="UIServerBrowserController.cs" />
+    <Compile Include="UISettings.cs" />
+    <Compile Include="UISettingsController.cs" />
+    <Compile Include="UIState.cs" />
+    <Compile Include="UITeamSelect.cs" />
+    <Compile Include="UITeamSelectController.cs" />
+    <Compile Include="UIToastManager.cs" />
+    <Compile Include="UIToastManagerController.cs" />
+    <Compile Include="UIUsernames.cs" />
+    <Compile Include="UIUsernamesController.cs" />
+    <Compile Include="UIUtils.cs" />
+    <Compile Include="UIView.cs" />
+    <Compile Include="UIViewController.cs" />
+    <Compile Include="UI\ChildClassifier.cs" />
+    <Compile Include="UI\CurvedSlider.cs" />
+    <Compile Include="UI\Friend.cs" />
+    <Compile Include="UI\Icon.cs" />
+    <Compile Include="UI\IconButton.cs" />
+    <Compile Include="UI\KeyBindField.cs" />
+    <Compile Include="UI\Link.cs" />
+    <Compile Include="UI\Mmr.cs" />
+    <Compile Include="UI\Mod.cs" />
+    <Compile Include="UI\ModPreview.cs" />
+    <Compile Include="UI\PlayTile.cs" />
+    <Compile Include="UI\Spinner.cs" />
+    <Compile Include="UI\SpinnerDirection.cs" />
+    <Compile Include="UI\User.cs" />
+    <Compile Include="Units.cs" />
+    <Compile Include="UnityEngine\InputSystem\Composites\ButtonWithOneOrNoneModifier.cs" />
+    <Compile Include="UnitySourceGeneratedAssemblyMonoScriptTypes_v1.cs" />
+    <Compile Include="Utils.cs" />
+    <Compile Include="Vector3PIDController.cs" />
+    <Compile Include="VelocityLean.cs" />
+    <Compile Include="VisualElementHarmonyPatch.cs" />
+    <Compile Include="VoiceLevelMeter.cs" />
+    <Compile Include="VoiceUtils.cs" />
+    <Compile Include="Vote.cs" />
+    <Compile Include="VoteManager.cs" />
+    <Compile Include="VoteManagerController.cs" />
+    <Compile Include="WebSocketManager.cs" />
+    <Compile Include="WebSocketManagerController.cs" />
+    <Compile Include="WhitelistManager.cs" />
+    <Compile Include="WhitelistManagerController.cs" />
+    <Compile Include="Zone.cs" />
+    <Compile Include="ZoneController.cs" />
+    <Compile Include="__GEN\NetworkVariableSerializationHelper.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
